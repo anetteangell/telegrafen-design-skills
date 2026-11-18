@@ -33,27 +33,28 @@ Writes captions and alt text for equipment images so they meet WCAG 2.2 AA and E
 - Describe function and meaning. No instructions ("koble til", "trykk") in captions.
 - Alt text is about 25–100 characters, one sentence, no "bilde av".
 - Caption is 1–2 sentences and adds meaning that alt text does not.
-- Colours: always name the colour and a colour-independent cue, e.g. "Den nederste porten er blå og merket WAN."
-- Text printed on ports, lamps and buttons is often small and hard to read. Explain it in the caption ("porten merket PWR er strøminngangen"). Mark the reading for fact-check in the Avklaring column.
+- Colours: always name the colour and a colour-independent cue, e.g. "Den nederste porten er blå og merket WAN." (the bottom port is blue and labelled WAN)
+- Text printed on ports, lamps and buttons is often small and hard to read. Explain it in the caption ("porten merket PWR er strøminngangen" (the port labelled PWR is the power input)). Mark the reading for fact-check in the Avklaring (clarification) column.
 - Router: LAN ports connect many kinds of equipment. The WAN port is the blue internet input.
 - Cables: say what the cable connects, connector shape and colour with a cue, and no instructions.
 - Wall sockets and adapters: name each port by its printed label.
 - Off/on images that look identical get a neutral caption; the table notes it.
-- Button images (category Fjernkontrollknapper only): shown small in a list of `Funksjonskort` cards with image (96 px, no round background; the Infobox icon slot cannot be enlarged), button name as title, and one sentence explaining what the function does or means in use, not just its name (e.g. "Tar deg til startsiden, med anbefalinger, kanaler og appene dine"; lamps: what the colour means). No full stop, as for short labels in `telegrafen-ux-writing`. Styling: Color/Surface/Subtle, Color/Border/Default 1px, 20 padding, title 20 Medium, text 16 Light. List width 440 px as the Infobox standard; cards fill the container so they adapt to the screen. The text matches the overview page on Telenor.no, with new illustrations. Do not describe the image in the caption; the alt text in the table does that. The "see all functions" link is built in the implementation, not in Figma. Whether the images are decorative is unconfirmed.
+- Button images (category Fjernkontrollknapper only): shown small in a list of `Funksjonskort` cards with image (96 px, no round background; the Infobox icon slot cannot be enlarged), button name as title, and one sentence explaining what the function does or means in use, not just its name (e.g. "Tar deg til startsiden, med anbefalinger, kanaler og appene dine" (takes you to the home page with recommendations, channels and your apps); lamps: what the colour means). No full stop, as for short labels in `telegrafen-ux-writing`. Styling: Color/Surface/Subtle, Color/Border/Default 1px, 20 padding, title 20 Medium, text 16 Light. List width 440 px as the Infobox standard; cards fill the container so they adapt to the screen. The text matches the overview page on Telenor.no, with new illustrations. Do not describe the image in the caption; the alt text in the table does that. The "see all functions" link is built in the implementation, not in Figma. Whether the images are decorative is unconfirmed.
+- Write the skill and its rules in English; only the produced captions, alt text and examples are Norwegian Bokmål.
 - Tone: du/vi, sentence case, no em dashes, no jargon without explanation.
 
 ## Data model
 
 - Image ID = `<set>/<variant>`, for example `fjernkontroll-3/twe-home`. The ID links text to image; text is never stored in the image.
 - Title pattern: `<Enhet>: <del>`.
-- Table row: Bilde-ID, alt text, character count, status (`Utkast`), Avklaring (default "Faktasjekkes mot produktteam").
+- Table row: Bilde-ID, alt text, character count, status (`Utkast`, draft), Avklaring (clarification; default "Faktasjekkes mot produktteam", meaning "to be fact-checked with the product team").
 - Layout: one section per set, cells in a single horizontal row, no overlapping sections. One alt-text table per category page, outside the component.
 - Intended implementation: a single source of truth in the asset bank / Gizmo with editing in one place only. Not yet decided.
 
 ## QA checklist
 
 - Caption matches the image.
-- No instructions, no "må avklares" in caption text.
+- No instructions, no "må avklares" (needs clarification) in caption text.
 - Colour has a non-colour cue.
 - Printed labels explained and flagged for fact-check.
 - Alt text length within range; no duplicate of caption.
