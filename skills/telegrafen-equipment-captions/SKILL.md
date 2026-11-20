@@ -31,7 +31,9 @@ Writes captions and alt text for equipment images so they meet WCAG 2.2 AA and E
 ## Caption and alt text rules
 
 - Describe function and meaning. No instructions ("koble til", "trykk") in captions.
-- Alt text is about 25–100 characters (a guideline, not a hard limit), one sentence, no "bilde av". Decorative images get an empty alt and are listed as such in the table.
+- Alt text is for blind, low-vision and screen reader users (WCAG 1.1.1; Digdir/Uutilsynet: alt text describes the motif, the visible caption adds purpose). Write 2-4 plain sentences, about 120-350 characters, in this order: what the image shows and the view; shape, colour and material; then the parts in fixed order (top to bottom or left to right) with colour AND position, and the text printed on ports, buttons and lamps. Start with "Dette bildet viser ..." (house style). Do not repeat the caption's explanation of what a part is for, and do not instruct. Say "to be confirmed" in the Avklaring column, never in the alt text.
+- Alt text describes only what is visible. If a model name, port function or on/off state is not certain, flag it in Avklaring.
+- Sets: write alt text per image, not per set. Close-ups say which part of the product they show and what surrounds it (neighbouring ports), so the user can place them.
 - Caption is 1–2 sentences and adds meaning that alt text does not.
 - Colours: always name the colour and a colour-independent cue, e.g. "Den nederste porten er blå og merket WAN."
 - Text printed on ports, lamps and buttons is often small and hard to read. Explain it in the caption, e.g. "Porten merket PWR er strøminngangen." Mark the reading for fact-check in the Avklaring column.
@@ -39,11 +41,18 @@ Writes captions and alt text for equipment images so they meet WCAG 2.2 AA and E
 - Cables: say what the cable connects, connector shape and colour with a cue, and no instructions.
 - Wall sockets and adapters: name each port by its printed label.
 - Off/on images that look identical get a neutral caption; the table notes it.
+- Alt text length: 120-450 characters. Instructions (order, hold time, "at the same time") live in a separate instruction text, never in caption or alt text, because the same image can serve several instructions.
+- Shape and position: for every highlighted button or port, state its shape (round, tall narrow pill, wide rounded rectangle, small flat) and its position relative to fixed landmarks (navigation ring with OK, power at the top, Telenor symbol at the bottom, neighbouring buttons or ports). This lets blind and low-vision users find the right control.
+- Button combinations (pairing, sound selection, reset): the caption states only which buttons are marked and, if confirmed, what the pair is used for (e.g. "Hjem-knappen og OK-knappen. De to knappene brukes sammen når fjernkontrollen kobles til T-We-boksen"). Do not state a function for digit combinations, since digits serve many instructions. The alt text names each button, its shape and its position relative to the other.
+- Illustration colour: do not describe the body colour of remotes and T-We boxes (illustrations differ from the physical product). Do state light vs dark for routers, amplifiers, ONTs and modems so a white router is not mistaken for a black ONT. Keep functional colours: yellow LAN, blue WAN or USB, lamp colours, the four colour buttons. Dim ("-dim") images: "Ingen knapper er markert", no colour.
+- Product names: "WiFi Ruter 1/2/3" and "WiFi Forsterker 1/2/3" with digits in alt text and captions so screen readers say numbers (telenor.no help pages use Roman numerals; do not copy that). Router N pairs with amplifier N. T-We names: "T-We boks 2/3" and "T-We fjernkontroll 2/3". Technical IDs keep the hardware name (`zyxel-ruter-1`).
+- Whenever a term or requirement is agreed in the session, update this file in the same turn.
+- Write the skill and its rules in English; only the produced captions, alt text and examples are Norwegian Bokmål.
 - Tone: du/vi, sentence case, no em dashes, no jargon without explanation.
 
 ## Button list pattern (Fjernkontrollknapper)
 
-Applies to the category Fjernkontrollknapper only. Buttons are shown small in a list of `Funksjonskort` cards with image (96 px, no round background; the Infobox icon slot cannot be enlarged), button name as title, and one sentence explaining what the function does or means in use, not just its name (e.g. "Tar deg til startsiden, med anbefalinger, kanaler og appene dine."; lamps: what the colour means). End the sentence with a full stop, as for complete explanatory sentences in `telegrafen-ux-writing`. Styling: Color/Surface/Subtle, Color/Border/Default 1px, 20 padding, title 20 Medium, text 16 Light. List width 440 px as the Infobox standard; cards fill the container so they adapt to the screen. The text matches the overview page on Telenor.no, with new illustrations. Do not describe the image in the card text; the alt text in the table does that. The "see all functions" link is built in the implementation, not in Figma. Whether the images are decorative is unconfirmed; until confirmed, write alt text in the table and flag it in Avklaring.
+Applies to the category Fjernkontrollknapper only. Buttons are shown small in a list of `Funksjonskort` cards with image (96 px, no round background; the Infobox icon slot cannot be enlarged), button name as title, and one sentence explaining what the function does or means in use, not just its name (e.g. "Tar deg til startsiden, med anbefalinger, kanaler og appene dine"; lamps: what the colour means). No full stop, as for short labels in `telegrafen-ux-writing`. Styling: Color/Surface/Subtle, Color/Border/Default 1px, 20 padding, title 20 Medium, text 16 Light. List width 440 px as the Infobox standard; cards fill the container so they adapt to the screen. The text matches the overview page on Telenor.no, with new illustrations. Do not describe the image in the card text; the alt text in the table does that. The "see all functions" link is built in the implementation, not in Figma. Whether the images are decorative is unconfirmed; until confirmed, write alt text in the table and flag it in Avklaring.
 
 ## Data model
 
@@ -67,7 +76,7 @@ Image: router seen from behind with a blue port labelled WAN.
 - No instructions, no "må avklares" in caption text.
 - Colour has a non-colour cue.
 - Printed labels explained and flagged for fact-check.
-- Alt text length reasonable (about 25–100 characters); no duplicate of caption.
+- Alt text 120-450 characters, with shape and position for each highlighted control; no duplicate of caption.
 - Open items are in Avklaring and status is `Utkast`.
 - Sections do not overlap; nothing clipped (fresh screenshot).
 
