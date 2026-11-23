@@ -57,7 +57,7 @@ Applies to the category Fjernkontrollknapper only. Buttons are shown small in a 
 ## Data model
 
 - Image ID = `<set>/<variant>`, for example `fjernkontroll-3/twe-home`. The ID links text to image; text is never stored in the image.
-- Title pattern: `<Enhet>: <del>`.
+- Title pattern: `<Enhet>: <del>`, where `<Enhet>` is always the full public name with number, on every image of the set including close-ups: `WiFi Ruter 3: forsiden`, `WiFi Ruter 3: lamper`, `WiFi-forsterker 2: WPS-knapp`. Never only "Ruter", "Ruter 3" or "Forsterker". Our routers are called WiFi Ruter 1, 2 and 3. The same applies to the first mention in a caption ("WiFi Ruter 3 sett forfra"); later the generic word "ruteren" is fine.
 - Table row: Bilde-ID, alt text, character count, status (`Utkast`), Avklaring (default "Faktasjekkes mot produktteam"). Keep these column names and values in Norwegian.
 - Layout: one section per set, cells in a single horizontal row, no overlapping sections. One alt-text table per category page, outside the component.
 - Intended implementation: a single source of truth in the asset bank / Gizmo with editing in one place only. Not yet decided.
